@@ -6,7 +6,7 @@ Checklist passo a passo para entender, implementar e aprender o projeto de gRPC 
 
 ## Etapa 1 — Fundamentos Teóricos
 
-- [ ] Ler o [Lauda.md](Lauda.md) por completo para entender o escopo do exercício.
+- [x] Ler o [Lauda.md](Lauda.md) por completo para entender o escopo do exercício.
 - [ ] Pesquisar o que é **RPC (Remote Procedure Call)** e por que ele existe.
 - [ ] Entender o que é **gRPC** e como ele difere de RPC tradicional.
 - [ ] Estudar o que é **Protocol Buffers (protobuf)** e por que é usado como IDL.
@@ -17,23 +17,23 @@ Checklist passo a passo para entender, implementar e aprender o projeto de gRPC 
 
 ## Etapa 2 — Preparação do Ambiente
 
-- [ ] Verificar a versão do Python instalado (`python --version`) — precisa ser **3.7+**.
-- [ ] Criar um ambiente virtual para o projeto:
+- [x] Verificar a versão do Python instalado (`python --version`) — precisa ser **3.7+**.
+- [x] Criar um ambiente virtual para o projeto:
   ```bash
   python -m venv venv
   ```
-- [ ] Ativar o ambiente virtual:
+- [x] Ativar o ambiente virtual:
   - Windows: `venv\Scripts\activate`
   - Linux/Mac: `source venv/bin/activate`
-- [ ] Instalar as dependências necessárias:
+- [x] Instalar as dependências necessárias:
   ```bash
   pip install grpcio grpcio-tools
   ```
-- [ ] Confirmar a instalação:
+- [x] Confirmar a instalação:
   ```bash
   pip list | findstr grpc
   ```
-- [ ] Criar um arquivo `requirements.txt` com as dependências do projeto:
+- [x] Criar um arquivo `requirements.txt` com as dependências do projeto:
   ```bash
   pip freeze > requirements.txt
   ```
