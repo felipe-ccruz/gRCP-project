@@ -1,0 +1,40 @@
+syntax = "proto3";
+
+package calculator;
+
+// Mensagem de requisicao usada por todas as operacoes binarias.
+// Os numeros de campo (= 1, = 2) identificam cada campo na codificacao
+// binaria do Protocol Buffers e nao podem se repetir dentro da mensagem.
+message OperationRequest {
+    int32 a = 1;
+    int32 b = 2;
+}
+
+// Mensagem de resposta. Alem do resultado, carrega um campo de erro
+// opcional usado, por exemplo, na divisao por zero.
+message OperationResponse {
+    double result = 1;
+    string error = 2;
+}
+
+// Requisicao mantida por compatibilidade com o exemplo original da Lauda.
+message SumRequest {
+    int32 a = 1;
+    int32 b = 2;
+}
+
+message SumResponse {
+    int32 result = 1;
+}
+
+// Definicao do servico de calculadora.
+service Calculator {
+    // Metodo original do exercicio.
+    rpc Sum(SumRequest) returns (SumResponse);
+
+    // Extensoes: as quatro operacoes basicas.
+    rpc Add(OperationRequest) returns (OperationResponse);
+    rpc Subtract(OperationRequest) returns (OperationResponse);
+    rpc Multiply(OperationRequest) returns (OperationResponse);
+    rpc Divide(OperationRequest) returns (OperationResponse);
+}
